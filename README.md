@@ -38,8 +38,7 @@ A high-end, cinematic portfolio experience built for the modern web. This projec
 
 ## 📸 Preview
 
-> [!NOTE]
-> Add your GIFs or screenshots here to showcase the stunning cinematic scroll sequence and bento grid projects!
+![Portfolio Screenshot](public/images/Portfolioscreenshot.png)
 
 ---
 
@@ -124,10 +123,5 @@ The easiest way to deploy this project is via the [Vercel Platform](https://verc
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 <p align="center">Built with 🤍 by Ninad Ubale</p>
