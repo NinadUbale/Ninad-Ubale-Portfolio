@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Developer Portfolio | Cinematic Scrollytelling
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-ff69b4?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
 
-First, run the development server:
+A high-end, cinematic portfolio experience built for the modern web. This project combines **Next.js 14**, **Framer Motion**, and **HTML5 Canvas** to create a seamless "Scrollytelling" journey that highlights technical expertise and professional achievements with premium aesthetics.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🔗 **Live Demo:** [ninad-ubale-portfolio.vercel.app](https://ninad-ubale-portfolio.vercel.app/)
+
+---
+
+## ✨ Features
+
+- 🎬 **Cinematic Scrollytelling**: High-performance scroll-linked image sequence rendering using HTML5 Canvas.
+- 💎 **Glassmorphism UI**: Modern, premium design system with subtle blurs, borders, and dark-themed aesthetics.
+- 📱 **Fully Responsive**: Optimized for every screen size, from mobile devices to ultra-wide monitors.
+- 📧 **Interactive Contact Form**: Integrated with **EmailJS** for direct client-side email delivery with real-time feedback.
+- ⚡ **Performance Optimized**: Built with Next.js App Router for superior speed and SEO.
+- 🎭 **Fluid Animations**: Smooth entrance animations and micro-interactions powered by Framer Motion.
+- 📄 **Resume Download**: Securely hosted resume for instant accessibility.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Library**: [React 18](https://reactjs.org/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Form Service**: [EmailJS](https://www.emailjs.com/)
+- **Type Safety**: [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+## 📸 Preview
+
+> [!NOTE]
+> Add your GIFs or screenshots here to showcase the stunning cinematic scroll sequence and bento grid projects!
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0 or later
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/NinadUbale/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set up Environment Variables:**
+   Create a `.env.local` file in the root directory and add your EmailJS keys:
+   ```env
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+---
+
+## 📂 Folder Structure
+
+```text
+├── public/              # Static assets (images, pdfs, sequence frames)
+├── src/
+│   ├── app/             # Next.js App Router (Layouts & Pages)
+│   ├── components/      # Reusable UI components (Hero, Projects, Contact, etc.)
+│   ├── lib/             # Utility functions and data schemas
+│   └── styles/          # Global styles & Tailwind config
+├── .env.local           # Local environment variables (ignored by git)
+└── next.config.mjs      # Next.js configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The easiest way to deploy this project is via the [Vercel Platform](https://vercel.com/new).
 
-## Learn More
+1. Push your code to GitHub.
+2. Import the project into Vercel.
+3. Add your Environment Variables in the Vercel project settings.
+4. Hit **Deploy**!
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔮 Future Improvements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] **Blog Section**: Integration with MDX for technical writing.
+- [ ] **Dark/Light Mode**: Dynamic theme switching (currently optimized for Dark).
+- [ ] **Analytics**: Integration with Vercel Analytics for tracking engagement.
+- [ ] **Localized Content**: Multilingual support.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👤 Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Ninad Ubale**
+*Web/App Developer & AI Enthusiast*
+
+- LinkedIn: [ninad-ubale](https://linkedin.com/in/ninad-ubale)
+- GitHub: [@NinadUbale](https://github.com/NinadUbale)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">Built with 🤍 by Ninad Ubale</p>
