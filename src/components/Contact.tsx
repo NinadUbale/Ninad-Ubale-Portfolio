@@ -23,36 +23,37 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formRef.current) return;
 
     setStatus("sending");
 
-    emailjs.sendForm(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-      formRef.current,
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-    ).then((result) => {
-        console.log(result.text);
-        setStatus("sent");
-        formRef.current?.reset();
-        
-        // Reset status back to idle after 5 seconds to allow new messages
-        setTimeout(() => setStatus("idle"), 5000);
-    }, (error) => {
-        console.log(error.text);
-        setStatus("error");
-        
-        // Reset status back to idle after 5 seconds
-        setTimeout(() => setStatus("idle"), 5000);
-    });
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus("sent");
+          formRef.current?.reset();
+          setTimeout(() => setStatus("idle"), 5000);
+        },
+        (error) => {
+          console.log(error.text);
+          setStatus("error");
+          setTimeout(() => setStatus("idle"), 5000);
+        }
+      );
   };
 
   return (
     <section className="relative w-full bg-[#121212] py-32 px-6 md:px-24 z-20 border-t border-white/5" id="contact">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-16">
-        
+
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -62,14 +63,15 @@ export default function Contact() {
         >
           <div>
             <h2 className="text-sm uppercase tracking-widest text-zinc-500 mb-6 border-b border-white/10 pb-4 inline-block">
-              Let's Talk
+              Let&apos;s Talk
             </h2>
             <h3 className="text-4xl md:text-5xl font-medium text-white mb-6">
               Got a project in mind?
             </h3>
             <p className="text-zinc-400 font-light leading-relaxed mb-8">
-              I'm currently looking for new opportunities in full-stack engineering, backend systems, or GenAI development. If you want to build something amazing, my inbox is always open.
+              I&apos;m currently looking for new opportunities in full-stack engineering, backend systems, or GenAI development. If you want to build something amazing, my inbox is always open.
             </p>
+
             <div className="space-y-2 text-zinc-300 font-light">
               <p>ninadubale04@gmail.com</p>
               <p>+91 77579 27989</p>
@@ -84,6 +86,7 @@ export default function Contact() {
               </div>
               <span className="font-medium text-sm tracking-wide">LinkedIn</span>
             </a>
+
             <a href="https://github.com/NinadUbale" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group">
               <div className="p-3 rounded-full bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors">
                 <GithubIcon className="w-5 h-5" />
@@ -101,77 +104,56 @@ export default function Contact() {
           className="md:w-1/2 p-8 rounded-3xl bg-white/[0.02] border border-white/[0.05] backdrop-blur-md"
         >
           <form className="flex flex-col gap-6" ref={formRef} onSubmit={handleSubmit}>
+            
             <div>
               <label htmlFor="name" className="block text-sm text-zinc-400 mb-2">Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name"
-                placeholder="Name"
-                required
-                className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-400/50 transition-colors"
-              />
+              <input type="text" id="name" name="name" placeholder="Name" required className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-400/50 transition-colors" />
             </div>
+
             <div>
               <label htmlFor="email" className="block text-sm text-zinc-400 mb-2">Email</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email"
-                placeholder="Email Address"
-                required
-                className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-400/50 transition-colors"
-              />
+              <input type="email" id="email" name="email" placeholder="Email Address" required className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-400/50 transition-colors" />
             </div>
+
             <div>
               <label htmlFor="message" className="block text-sm text-zinc-400 mb-2">Message</label>
-              <textarea 
-                id="message" 
-                name="message"
-                rows={4}
-                placeholder="How can I help you?"
-                required
-                className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-400/50 transition-colors resize-none"
-              ></textarea>
+              <textarea id="message" name="message" rows={4} placeholder="How can I help you?" required className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-400/50 transition-colors resize-none"></textarea>
             </div>
-            
-            <button 
-              type="submit" 
-              disabled={status !== "idle"}
-              className="mt-2 w-full bg-white text-black font-medium py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
-            >
+
+            <button type="submit" disabled={status !== "idle"} className="mt-2 w-full bg-white text-black font-medium py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden">
+              
               {status === "idle" && (
-                <span className="flex items-center gap-2">Send Message <Send className="w-4 h-4 ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></span>
+                <span className="flex items-center gap-2">
+                  Send Message <Send className="w-4 h-4 ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </span>
               )}
+
               {status === "sending" && (
                 <span className="flex items-center gap-2">
                   <span className="w-4 h-4 border-2 border-black/20 border-t-black rounded-full animate-spin"></span>
                   Sending...
                 </span>
               )}
+
               {status === "sent" && (
-                <motion.span 
-                  initial={{ y: 20 }} 
-                  animate={{ y: 0 }} 
-                  className="flex items-center gap-2 text-emerald-600"
-                >
+                <motion.span initial={{ y: 20 }} animate={{ y: 0 }} className="flex items-center gap-2 text-emerald-600">
                   Message Sent <CheckCircle2 className="w-4 h-4" />
                 </motion.span>
               )}
+
               {status === "error" && (
-                <motion.span 
-                  initial={{ y: 20 }} 
-                  animate={{ y: 0 }} 
-                  className="flex items-center gap-2 text-red-600"
-                >
+                <motion.span initial={{ y: 20 }} animate={{ y: 0 }} className="flex items-center gap-2 text-red-600">
                   Failed to send <AlertCircle className="w-4 h-4" />
                 </motion.span>
               )}
             </button>
-            
+
             {status === "error" && (
-              <p className="text-red-400 text-xs text-center">Something went wrong. Please try again later.</p>
+              <p className="text-red-400 text-xs text-center">
+                Something went wrong. Please try again later.
+              </p>
             )}
+
           </form>
         </motion.div>
 
