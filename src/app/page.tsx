@@ -23,7 +23,7 @@ export default function Home() {
   });
 
   return (
-    <main className="bg-[#121212] min-h-screen text-white selection:bg-white/30 selection:text-white">
+    <main className="relative bg-[#121212] min-h-screen text-white selection:bg-white/30 selection:text-white">
       <div ref={containerRef} className="relative h-[500vh] w-full bg-[#121212]">
         <ScrollyCanvas scrollYProgress={scrollYProgress} />
         <Overlay scrollYProgress={scrollYProgress} />

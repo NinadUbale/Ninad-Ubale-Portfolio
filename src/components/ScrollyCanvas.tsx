@@ -21,6 +21,8 @@ export default function ScrollyCanvas({
 
     for (let i = 0; i < FRAME_COUNT; i++) {
       const img = new Image();
+      img.loading = "eager";
+      img.decoding = "async";
       // Format: frame_000_delay-0.066s.png
       const frameString = i.toString().padStart(3, "0");
       img.src = `/sequence/frame_${frameString}_delay-0.066s.png`;

@@ -10,6 +10,12 @@ export default function Certifications() {
 
   const certs = [
     {
+      title: "2nd Rank - Hackathon 1.0",
+      issuer: "Linkcode Technologies",
+      image: "/images/Hackathon Certificate.jpeg",
+      date: "March 2026",
+    },
+    {
       title: "Java Full Stack",
       issuer: "Linkcode",
       image: "/images/linkcode.png",
