@@ -25,8 +25,8 @@ export default function About() {
 
           <div className="mt-12 flex justify-start">
             <a 
-              href="/Ninad_Ubale_Resume.pdf" 
-              download="Ninad_Ubale_Resume.pdf"
+              href="/Ninad Ubale Resume.pdf" 
+              download="Ninad Ubale Resume.pdf"
               className="group flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-light tracking-wide hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-md"
             >
               <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
